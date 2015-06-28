@@ -1,0 +1,20 @@
+{% block content %}
+    <a href="/add_movie/"> Add a new movie </a>
+    <div class="movies">
+        {% for movie in movies %}
+            <!-- {% if movie.published_date %} -->
+                <!-- <div class="date"> -->
+                    <!-- {{ movie.published_date }} -->
+                <!-- </div> -->
+            <!-- {% endif %} -->
+            
+            <h1>{{ movie.title }}<small> {{ movie.rating }} </small></h1>
+            <a href="/vote_movie/{{ movie.id }}/"> Vote this movie </a>
+            <p> Released on {{ movie.launch_date }}</p>
+            <p><a href="{{ movie.imdb_link }}"> Link to IMDb page </a></p>
+            {% if movie.poster %}
+            <p><img src="{{ movie.poster }}"/></p>
+            {% endif %}
+        {% endfor %}
+    </div>
+{% endblock %}

@@ -1,0 +1,6 @@
+<form method="post" action="/submit_vote/{{ movie.id }}/">
+	{% csrf_token %}
+	<h1> {{ movie.title }} </h1>
+	{{ form }}
+	<button type="submit"> Vote </button>
+</form>

@@ -1,0 +1,13 @@
+<h1> Add a movie! </h1>
+</br>
+
+<form action="submit_movie/" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <!-- {{ form }} -->
+    </br>
+    </br>
+    <button type="submit"> Submit movie </button>
+</form>
+</br>
+</br>
