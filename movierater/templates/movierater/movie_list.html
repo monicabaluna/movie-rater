@@ -35,7 +35,7 @@
             height="128"></p>
             {% endif %}
 	     {% if movie.rating %}
-	    	<p><strong>Current rating</strong> {{movie.rating}}</p>
+	    	<p><strong>Current rating</strong> {{movie.rating|floatformat}}</p>
 	     {% else %}
 		<p><strong>Not rated yet!</strong> </p>
 	    {% endif %}
