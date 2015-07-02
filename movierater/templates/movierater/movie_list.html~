@@ -34,7 +34,7 @@
             <p><img src="{{ movie.poster }}" alt={{movie.title}} width="200"
             height="128"></p>
             {% endif %}
-	     {% if movie.rating %}
+	     { % if movie.rating %}
 	    	<p><strong>Current rating</strong> {{movie.rating}}</p>
 	     {% else %}
 		<p><strong>Not rated yet!</strong> </p>

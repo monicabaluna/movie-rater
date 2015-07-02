@@ -2,7 +2,7 @@
 <html>
 
 	<head>
-		<title>Movie Rater</title>
+		<title>{{movie.title}}</title>
 		 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
         	<link rel="stylesheet" href="{% static "css/movierater.css" %}">
@@ -10,19 +10,12 @@
 
     	</head> 
 
- <div class="page-header">
-	<h1>Add a movie!</h1>
-    </div>
-</br>
 
-<form action="submit_movie/" method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <!-- {{ form }} -->
-    </br>
-    </br>
-    <button type="submit"> Submit movie </button>
+<form method="post" action="/submit_vote/{{ movie.id }}/">
+	{% csrf_token %}
+	<h1> {{ movie.title }} </h1>
+	{{ form }}
+	<button type="submit"> Vote </button>
 </form>
-</br>
-</br>
+
 </html>
